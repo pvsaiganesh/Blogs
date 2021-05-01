@@ -1,0 +1,23 @@
+/* Write your CSS code here */
+.image {
+  height: 200px;
+  width: 200px;
+  margin: 10px;
+  border-radius: 20px;
+}
+.cen {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+}
+.image-2 {
+  height: 100px;
+  width: 100px;
+  margin: 10px;
+  border-radius: 20px;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
