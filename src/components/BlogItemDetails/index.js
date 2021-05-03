@@ -1,10 +1,10 @@
 // Write your JS code here
+import Loader from 'react-loader-spinner'
 import {Component} from 'react'
-
 import './index.css'
 
 class BlogItemDetails extends Component {
-  state = {blogItem: []}
+  state = {blogItem: [], loading: true}
 
   componentDidMount() {
     this.getDetails()
@@ -26,13 +26,17 @@ class BlogItemDetails extends Component {
       content: data.content,
     }
     console.log(data)
-    this.setState({blogItem: newData})
+    this.setState({blogItem: newData, loading: false})
   }
 
   render() {
-    const {blogItem} = this.state
+    const {blogItem, loading} = this.state
     const {imageUrl, content, topic, title, author, avatarUrl} = blogItem
-    return (
+    return loading ? (
+      <div testid="loader">
+        <Loader type="TailSpin" color="#00BFFF" height={50} width={50} />
+      </div>
+    ) : (
       <div>
         <div className="cen">
           <img className="image" src={imageUrl} alt="img" />
